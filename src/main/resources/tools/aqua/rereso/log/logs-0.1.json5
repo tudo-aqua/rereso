@@ -1,0 +1,64 @@
+// SPDX-FileCopyrightText: 2023-2025 The ReReSo Authors, see AUTHORS.md
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+{
+  $id: "https://aqua.tools/rereso/releases/download/0.1/logs-0.1.json5",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "ReReSo string-based logs",
+  type: "object",
+  properties: {
+    name: {
+      description: "The name of the log set",
+      type: "string",
+    },
+    logs: {
+      description: "The logs in the set",
+      type: "array",
+      items: {
+        description: "A single log",
+        type: "object",
+        properties: {
+          name: {
+            description: "The name of the log",
+            type: "string",
+          },
+          entries: {
+            description: "An array of log entries",
+            oneOf: [
+              {
+                type: "array",
+                items: {
+                  oneOf: [
+                    {
+                      description: "A string symbol without additional data",
+                      type: "string",
+                    },
+                    {
+                      description: "A complex symbol with optional additional data",
+                      type: "object",
+                      properties: {
+                        value: {
+                          description: "A string symbol",
+                          type: "string",
+                        },
+                      },
+                      required: ["value"],
+                    },
+                  ],
+                },
+              },
+              {
+                description: "A simple word log, to be read character-wise",
+                type: "string",
+              },
+            ],
+          },
+        },
+        required: ["entries"],
+      },
+      minItems: 1,
+    },
+  },
+  required: ["logs"],
+}

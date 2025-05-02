@@ -1,0 +1,51 @@
+// SPDX-FileCopyrightText: 2023-2025 The ReReSo Authors, see AUTHORS.md
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+{
+  $id: "https://aqua.tools/rereso/releases/download/0.1/timed-logs-0.1.json5",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "ReReSo logs with timing information",
+  type: "object",
+  properties: {
+    logs: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          entries: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                start: {
+                  description: "The start date of the entry relative to the epoch (if none is set, a fictional epoch is assumed).",
+                  type: "string",
+                  format: "duration",
+                },
+                duration: {
+                  description: "The duration of the entry, if known.",
+                  type: "string",
+                  format: "duration",
+                },
+              },
+              required: ["start"],
+            },
+          },
+          epoch: {
+            description: "The start date of the log, if known, in real-world time.",
+            type: "string",
+            format: "date-time",
+          },
+          duration: {
+            description: "The duration of the log recording, if known.",
+            type: "string",
+            format: "duration",
+          },
+        },
+        required: ["entries"],
+      },
+    },
+  },
+  required: ["logs"],
+}

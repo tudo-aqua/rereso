@@ -1,0 +1,42 @@
+// SPDX-FileCopyrightText: 2023-2025 The ReReSo Authors, see AUTHORS.md
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+{
+  $id: "https://aqua.tools/rereso/releases/download/0.1/normalized-logs-0.1.json5",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "ReReSo logs with normalized entries",
+  type: "object",
+  properties: {
+    logs: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          entries: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                denormalized: {
+                  description: "The denormalized, original form",
+                  type: "string",
+                },
+                parameters: {
+                  description: "The normalized-away parameters",
+                  type: "array",
+                  items: {
+                    type: "string",
+                  },
+                },
+              },
+              required: ["denormalized"],
+            },
+          },
+        },
+        required: ["entries"],
+      },
+    },
+  },
+  required: ["logs"],
+}

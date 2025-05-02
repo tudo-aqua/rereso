@@ -1,0 +1,27 @@
+// SPDX-FileCopyrightText: 2023-2025 The ReReSo Authors, see AUTHORS.md
+//
+// SPDX-License-Identifier: CC-BY-4.0
+
+{
+  $id: "https://aqua.tools/rereso/releases/download/0.1/tvt-split-logs-0.1.json5",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "ReReSo Logs with fixed training / validation / test split",
+  type: "object",
+  properties: {
+    logs: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          split: {
+            type: "string",
+            enum: ["training", "validation", "test"],
+            default: "training",
+          },
+        },
+      },
+      minItems: 1,
+    },
+  },
+  required: ["logs"],
+}

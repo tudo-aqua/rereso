@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2023-2025 The ReReSo Authors, see AUTHORS.md
+# 
+# SPDX-License-Identifier: Apache-2.0
+
+version = 1
+
+[[annotations]]
+path = ["gradle/wrapper/gradle-wrapper.jar"]
+SPDX-FileCopyrightText = "2007 the original author or authors"
+SPDX-License-Identifier = "Apache-2.0"
