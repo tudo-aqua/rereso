@@ -42,4 +42,4 @@ serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serializ
 serialization-yaml = { group = "com.charleskorn.kaml", name = "kaml", version = "0.77.1" }
 snakeyaml = { group = "org.yaml", name = "snakeyaml", version = "2.4" }
 xz = { group = "org.tukaani", name = "xz", version = "1.10" }
-zstd = { group = "com.github.luben", name = "zstd-jni", version = "1.5.7-2" }
+zstd = { group = "com.github.luben", name = "zstd-jni", version = "1.5.7-3" }
