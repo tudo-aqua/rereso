@@ -34,7 +34,7 @@ datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version
 detekt-compiler = { group = "com.braisgabin.detekt", name = "kotlin-compiler-wrapper", version = "0.0.4" }
 detekt-faire = { group = "com.faire", name = "faire-detekt-rules", version = "0.5.1" }
 jsonSchema = { group = "dev.harrel", name = "json-schema", version = "1.8.1" }
-junit = { group = "org.junit", name = "junit-bom", version = "5.12.2" }
+junit = { group = "org.junit", name = "junit-bom", version = "5.13.0" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter" }
 junit-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
 matlab = { group = "us.hebi.matlab.mat", name = "mfl-core", version = "0.5.15" }
