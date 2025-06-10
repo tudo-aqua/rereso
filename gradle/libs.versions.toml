@@ -7,7 +7,7 @@
 dokka = "2.0.0"
 kotlin = "2.1.21"
 prettier-properties = "0.3.0"
-prettier-toml = "2.0.1"
+prettier-toml = "2.0.5"
 
 [plugins]
 
