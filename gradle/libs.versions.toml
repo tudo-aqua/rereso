@@ -28,6 +28,7 @@ versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
 
 activation = { group = "jakarta.activation", name = "jakarta.activation-api", version = "2.1.3" }
 assertj-core = { group = "org.assertj", name = "assertj-core", version = "3.27.3" }
+clikt = { group = "com.github.ajalt.clikt", name = "clikt", version = "5.0.3" }
 commons-compress = { group = "org.apache.commons", name = "commons-compress", version = "1.27.1" }
 csv = { group = "com.github.doyaaaaaken", name = "kotlin-csv-jvm", version = "1.10.0" }
 datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version = "0.6.2" }

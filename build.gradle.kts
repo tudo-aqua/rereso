@@ -26,6 +26,7 @@ import tools.aqua.asHashmarkComments
 import tools.aqua.asXmlComment
 
 plugins {
+  application
   `java-library`
   `maven-publish`
   signing
@@ -84,6 +85,7 @@ dependencies {
   api(libs.serialization.json)
   api(libs.serialization.yaml)
 
+  implementation(libs.clikt)
   implementation(libs.csv)
   implementation(libs.matlab)
   implementation(libs.snakeyaml)
@@ -250,6 +252,8 @@ tasks.test {
   useJUnitPlatform()
   testLogging { events(PASSED, SKIPPED, FAILED) }
 }
+
+application { mainClass = "tools.aqua.rereso.tool.ReReSoImporterKt" }
 
 val maven by
     publishing.publications.creating(MavenPublication::class) {

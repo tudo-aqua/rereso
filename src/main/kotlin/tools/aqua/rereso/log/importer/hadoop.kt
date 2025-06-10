@@ -27,7 +27,7 @@ import tools.aqua.rereso.util.getInputStream
  * @param logHubArchive the LogHub data set. This is a ZIP file containing multiple `.log` files.
  * @param logHub20Archive the LogHub-2.0 data set. This is a ZIP file containing
  *   `Hadoop_full.log_templates.csv`.
- * @return the ReReSo [LogArchive] containing the data.
+ * @return the ReReSo [LogArchive]s containing the data, indexed by application.
  */
 fun importLogHubHadoopArchive(
     logHubArchive: Path,

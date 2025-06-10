@@ -41,11 +41,11 @@ fun importDiscTracePair(
 
 private val traceRegex = "(?:test|train)_([0-9]+).txt".toRegex()
 
-private fun guessDiscID(path: Path): Int =
+internal fun guessDiscID(path: Path): Int =
     traceRegex.matchEntire(path.name)?.groupValues?.getOrNull(1)?.toInt()
         ?: error("could not parse id from file name ${path.name}")
 
-private fun guessDiscExperiment(path: Path): String {
+internal fun guessDiscExperiment(path: Path): String {
   var maybeRoot = path.parent
   while (maybeRoot != null) {
     if (maybeRoot.name == "traces") {
