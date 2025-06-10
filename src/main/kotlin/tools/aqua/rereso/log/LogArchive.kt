@@ -168,7 +168,7 @@ data class LogEntry(
     val value: String,
     val denormalized: String? = null,
     val parameters: List<String> = emptyList(),
-    @SerialName("start") val relativeStart: Duration? = null,
+    @SerialName("relative-start") val relativeStart: Duration? = null,
     val duration: Duration? = null,
 ) {
   init {
