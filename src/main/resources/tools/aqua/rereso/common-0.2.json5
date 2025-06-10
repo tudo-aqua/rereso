@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.1/common-0.1.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.2/common-0.2.json5",
   $schema: "http://json-schema.org/draft-07/schema",
   title: "ReReSo Benchmark",
   description: "Metadata for a ReReSo Benchmark bundle.",
@@ -30,7 +30,7 @@
             description: "A JSON schema satisfied by all files.",
             type: "string",
             format: "uri",
-            examples: ["https://aqua.tools/rereso/logs-0.1.json"],
+            examples: ["https://aqua.tools/rereso/logs-0.2.json"],
           },
         },
       },

@@ -14,7 +14,7 @@ internal val SIMPLE_TOOL =
         setOf(
             ToolCommand(
                 "default",
-                DataFormat(MimeType("text", "plain")),
+                listOf(DataFormat(MimeType("text", "plain"))),
                 listOf(DataFormat(MimeType("text", "plain"))))),
         "tool.sif")
 
@@ -28,7 +28,7 @@ internal val COMPLEX_TOOL =
         setOf(
             ToolCommand(
                 name = "operation <in> -l <log> -o <out>",
-                inputFormat = DataFormat(MimeType("text", "csv")),
+                inputFormats = listOf(DataFormat(MimeType("text", "csv"))),
                 outputFormats =
                     listOf(
                         DataFormat(
@@ -39,7 +39,7 @@ internal val COMPLEX_TOOL =
                             setOf(URI("https://aqua.tools/schema1.json"))))),
             ToolCommand(
                 name = "otherOperation <in> -o <out>",
-                inputFormat = DataFormat(MimeType("text", "csv")),
+                inputFormats = listOf(DataFormat(MimeType("text", "csv"))),
                 outputFormats =
                     listOf(
                         DataFormat(

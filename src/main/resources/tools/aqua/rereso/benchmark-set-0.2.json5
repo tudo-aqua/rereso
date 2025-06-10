@@ -3,26 +3,26 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.1/benchmark-set-0.1.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.2/benchmark-set-0.2.json5",
   $schema: "http://json-schema.org/draft-07/schema",
   title: "ReReSo Benchmark",
   description: "Metadata for a ReReSo Benchmark Set.",
   properties: {
     "rereso-benchmark-version": {
       type: "string",
-      const: "0.1",
+      const: "0.2",
     },
     metadata: {
       description: "Metadata for the benchmark set.",
-      $ref: "common-0.1.json5#/definitions/metadata",
+      $ref: "common-0.2.json5#/definitions/metadata",
     },
     license: {
       description: "The default license for all benchmarks in this set.",
-      $ref: "common-0.1.json5#/definitions/license-data",
+      $ref: "common-0.2.json5#/definitions/license-data",
     },
     format: {
       description: "The format of the benchmarks in this set.",
-      $ref: "common-0.1.json5#/definitions/data-format",
+      $ref: "common-0.2.json5#/definitions/data-format",
     },
     benchmarks: {
       description: "The location of the benchmarks in this set.",
@@ -37,7 +37,7 @@
           },
           license: {
             description: "The license for this benchmark.",
-            $ref: "common-0.1.json5#/definitions/license-data",
+            $ref: "common-0.2.json5#/definitions/license-data",
           },
         },
         required: ["path"],

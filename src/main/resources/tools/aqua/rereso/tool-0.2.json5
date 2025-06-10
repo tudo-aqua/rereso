@@ -3,22 +3,22 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.1/tool-0.1.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.2/tool-0.2.json5",
   $schema: "http://json-schema.org/draft-07/schema",
   title: "ReReSo Tool",
   description: "Metadata for a ReReSo Tool bundle.",
   properties: {
     "rereso-tool-version": {
       type: "string",
-      const: "0.1",
+      const: "0.2",
     },
     metadata: {
       description: "Metadata for the benchmark set.",
-      $ref: "common-0.1.json5#/definitions/metadata",
+      $ref: "common-0.2.json5#/definitions/metadata",
     },
     license: {
       description: "The license for the tool.",
-      $ref: "common-0.1.json5#/definitions/license-data",
+      $ref: "common-0.2.json5#/definitions/license-data",
     },
     commands: {
       description: "All commands (i.e., modes of operation) supported by the tool.",
@@ -32,21 +32,24 @@
             type: "string",
             examples: ["myTool <inputFile> -l <logFile> <resultFile>"],
           },
-          "input-format": {
-            description: "The required format of the input files.",
-            $ref: "common-0.1.json5#/definitions/data-format",
+          "input-formats": {
+            description: "The required formats of the input files.",
+            type: "array",
+            items: {
+              description: "One input file format.",
+              $ref: "common-0.2.json5#/definitions/data-format",
+            },
           },
           "output-formats": {
             description: "The generated formats of the output files.",
             type: "array",
-            minItems: 1,
             items: {
               description: "One output file format.",
-              $ref: "common-0.1.json5#/definitions/data-format",
+              $ref: "common-0.2.json5#/definitions/data-format",
             },
           },
         },
-        required: ["name", "input-format", "output-formats"],
+        required: ["name"],
       },
     },
     container: {

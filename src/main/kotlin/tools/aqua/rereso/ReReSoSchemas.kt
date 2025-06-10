@@ -8,7 +8,7 @@ package tools.aqua.rereso
 object ReReSoSchemas : SchemaGroup(yamlValidator()) {
 
   /** The ReReSo metadata version implemented by this library. */
-  override val version: String = "0.1"
+  override val version: String = "0.2"
 
   init {
     registerBundledSchema("common")
