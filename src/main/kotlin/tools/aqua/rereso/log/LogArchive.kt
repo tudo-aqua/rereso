@@ -38,8 +38,7 @@ import tools.aqua.rereso.util.implies
  * A single log in a [LogArchive].
  *
  * @property name a descriptive name, optional.
- * @property entries the entries in the log. If temporal information is available, these must be
- *   chronologically sorted and less than the [duration].
+ * @property entries the entries in the log.
  * @property classifier a classifier for the log (e.g., `OutOfMemoryError`), optional.
  * @property split the training-validation-test split for pre-split logs, defaulting to [TRAINING].
  * @property epoch the absolute timestamp at which the log starts (i.e., a "recording start"),
@@ -62,15 +61,9 @@ data class Log(
   val end: Instant? = if (epoch != null && duration != null) epoch + duration else null
 
   init {
-    entries.asSequence().mapNotNull(LogEntry::relativeStart).zipWithNext().forEach { (t1, t2) ->
-      require(t1 <= t2) { "log must be chronological; violated by $t1 and $t2" }
-    }
     if (duration != null) {
       entries.asSequence().mapNotNull(LogEntry::relativeStart).forEach {
         require(it <= duration) { "log start $it beyond log duration $duration" }
-      }
-      entries.asSequence().mapNotNull(LogEntry::relativeEnd).forEach {
-        require(it <= duration) { "log end $it beyond log duration $duration" }
       }
     }
   }
