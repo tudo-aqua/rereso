@@ -122,7 +122,7 @@ private fun parseLogFile(
               messageTemplate.second,
               denormalized = line,
               parameters = parameters,
-              relativeStart = timestamp.toInstant(UTC) - firstStart)
+              relativeStart = start - firstStart)
     }
   }
 

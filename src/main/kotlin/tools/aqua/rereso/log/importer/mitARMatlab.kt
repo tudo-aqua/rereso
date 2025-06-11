@@ -71,10 +71,6 @@ private fun importSubjectData(
         block(mat5Reader(it).readMat())
       }
 
-  fun getMat(name: String) =
-      mat5Reader(wrapInputStream(zip.getInputStream(zip.getEntry("$basePath$name$subject.mat"))))
-          .readMat()
-
   val locations = useMat("locations") { mat -> mat.getCell(0).use { it.toStringList() } }
   val appliances = useMat("types") { mat -> mat.getCell(0).use { it.toStringList() } }
   val activities = useMat("classes") { mat -> mat.getCell(0).use { it.toActivityClasses() } }
