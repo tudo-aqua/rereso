@@ -19,6 +19,7 @@ import java.nio.file.FileSystems
 import kotlin.io.path.createDirectories
 import kotlin.io.path.createParentDirectories
 import kotlin.io.path.div
+import kotlin.io.path.listDirectoryEntries
 import kotlin.io.path.name
 import kotlin.io.path.notExists
 import tools.aqua.rereso.log.LogArchive
@@ -72,10 +73,6 @@ private class DiscSingle : CliktCommand(name = "disc-single") {
 }
 
 private class DiscAll : CliktCommand(name = "disc-all") {
-  private companion object {
-    val nameExpr = """train_([0-9])+\.txt""".toRegex()
-  }
-
   private val dataDirectory by argument().path(mustExist = true, canBeFile = false)
   private val outputDirectory by argument().path(canBeFile = false)
   private val outputNameTemplate by
@@ -87,9 +84,8 @@ private class DiscAll : CliktCommand(name = "disc-all") {
 
   override fun run() {
     outputDirectory.createDirectories()
-    for (train in dataDirectory) {
-      val components = nameExpr.matchEntire(train.name) ?: continue
-      val id = components.groupValues[1].toInt()
+    for (train in dataDirectory.listDirectoryEntries("train_*.txt")) {
+      val id = train.name.removePrefix("train_").removeSuffix(".txt").toInt()
       val test = train.resolveSibling("test_$id.txt")
       if (test.notExists()) continue
       val output = outputDirectory / outputNameTemplate.replace("<id>", id.toString())
