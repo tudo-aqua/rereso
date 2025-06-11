@@ -123,10 +123,9 @@ private fun Cell.toActivityClasses(): Map<Int, Activity> {
   val (rows, cols) = dimensions
   require(cols == 4)
   return (0..<rows).associate { row ->
-    getMatrix(row, 3).use {
-      it.getInt(0) to
-          Activity(getCharAsString(row, 0), getCharAsString(row, 1), getCharAsString(row, 2))
-    }
+    // do not autoclose the matrices used here, this must be done by the surrounding cell
+    getMatrix(row, 3).getInt(0) to
+        Activity(getCharAsString(row, 0), getCharAsString(row, 1), getCharAsString(row, 2))
   }
 }
 
