@@ -3,22 +3,22 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.2/tool-0.2.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.3/tool-0.3.json5",
   $schema: "http://json-schema.org/draft-07/schema",
   title: "ReReSo Tool",
   description: "Metadata for a ReReSo Tool bundle.",
   properties: {
     "rereso-tool-version": {
       type: "string",
-      const: "0.2",
+      const: "0.3",
     },
     metadata: {
       description: "Metadata for the benchmark set.",
-      $ref: "common-0.2.json5#/definitions/metadata",
+      $ref: "common-0.3.json5#/definitions/metadata",
     },
     license: {
       description: "The license for the tool.",
-      $ref: "common-0.2.json5#/definitions/license-data",
+      $ref: "common-0.3.json5#/definitions/license-data",
     },
     commands: {
       description: "All commands (i.e., modes of operation) supported by the tool.",
@@ -37,7 +37,7 @@
             type: "array",
             items: {
               description: "One input file format.",
-              $ref: "common-0.2.json5#/definitions/data-format",
+              $ref: "common-0.3.json5#/definitions/data-format",
             },
           },
           "output-formats": {
@@ -45,7 +45,7 @@
             type: "array",
             items: {
               description: "One output file format.",
-              $ref: "common-0.2.json5#/definitions/data-format",
+              $ref: "common-0.3.json5#/definitions/data-format",
             },
           },
         },

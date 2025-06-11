@@ -12,7 +12,7 @@ import tools.aqua.rereso.jsonValidator
 object ReReSoLogSchemas : SchemaGroup(jsonValidator()) {
 
   /** The ReReSo log version implemented by this library. */
-  override val version: String = "0.2"
+  override val version: String = "0.3"
 
   /** The log base schema. */
   val logs: Schema by registeringBundledSchema

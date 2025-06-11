@@ -3,9 +3,9 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.2/tvt-split-logs-0.2.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.3/classified-logs-0.3.json5",
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "ReReSo Logs with fixed training / validation / test split",
+  title: "ReReSo logs with classifiers",
   type: "object",
   properties: {
     logs: {
@@ -13,14 +13,14 @@
       items: {
         type: "object",
         properties: {
-          split: {
+          class: {
+            description: "The classification of the log.",
             type: "string",
-            enum: ["training", "validation", "test"],
-            default: "training",
+            examples: ["accept", "reject", "OutOfMemory"],
           },
         },
+        required: ["class"],
       },
-      minItems: 1,
     },
   },
   required: ["logs"],

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: CC-BY-4.0
 
 {
-  $id: "https://aqua.tools/rereso/releases/download/0.2/logs-0.2.json5",
+  $id: "https://aqua.tools/rereso/releases/download/0.3/logs-0.3.json5",
   $schema: "http://json-schema.org/draft-07/schema#",
   title: "ReReSo string-based logs",
   type: "object",
