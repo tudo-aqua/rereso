@@ -31,7 +31,7 @@ assertj-core = { group = "org.assertj", name = "assertj-core", version = "3.27.3
 clikt = { group = "com.github.ajalt.clikt", name = "clikt", version = "5.0.3" }
 commons-compress = { group = "org.apache.commons", name = "commons-compress", version = "1.27.1" }
 csv = { group = "com.github.doyaaaaaken", name = "kotlin-csv-jvm", version = "1.10.0" }
-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version = "0.6.2" }
+datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version = "0.7.0-0.6.x-compat" }
 detekt-compiler = { group = "com.braisgabin.detekt", name = "kotlin-compiler-wrapper", version = "0.0.4" }
 detekt-faire = { group = "com.faire", name = "faire-detekt-rules", version = "0.5.1" }
 jsonSchema = { group = "dev.harrel", name = "json-schema", version = "1.8.1" }
